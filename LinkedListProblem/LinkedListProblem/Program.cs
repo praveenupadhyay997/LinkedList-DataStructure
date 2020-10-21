@@ -16,9 +16,10 @@ namespace LinkedListProblem
             Console.WriteLine("==============================");
             //Creating the instance of the Linked List Class
             LinkedList newList = new LinkedList();
-            newList.InsertInFront(70);
-            newList.InsertInFront(30);
-            newList.InsertInFront(56);
+            newList.Append(56);
+            newList.Append(30);
+            newList.Append(70);
+            Console.WriteLine("Linked List Status......");
             newList.DisplayList();
         }
     }

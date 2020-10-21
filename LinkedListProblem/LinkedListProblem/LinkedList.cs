@@ -91,5 +91,27 @@ namespace LinkedListProblem
             //Re-initialising the head position to new node
             this.head = newNode;
         }
+        /// <summary>
+        /// UC-3 Appending the node to the end of the linked list
+        /// </summary>
+        /// <param name="newData"></param>
+        public void Append(int newData)
+        {
+            //Creating a new node with data passed to the node value
+            Node newNode = new Node(newData);
+            //If head is null i.e. end of linked list at the begining
+            //Then initialising the head with the new node
+            if (this.head == null)
+            {
+                this.head = newNode;
+            }
+            //Else- Get the last node by traversal
+            //initialising the end oflast node with new node
+            else
+            {
+                Node lastNode = GetLastNode();
+                lastNode.next = newNode;
+            }
+        }
     }
 }
