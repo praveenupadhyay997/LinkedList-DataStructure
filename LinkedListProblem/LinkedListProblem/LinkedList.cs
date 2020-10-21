@@ -8,6 +8,7 @@ namespace LinkedListProblem
 {
     using System;
     using System.Collections.Generic;
+    using System.Security.Cryptography.X509Certificates;
     using System.Text;
     public class LinkedList
     {
@@ -77,6 +78,18 @@ namespace LinkedListProblem
                 }
             }
         }
-
+        /// <summary>
+        /// UC2- Inserting the element at the head of the linked list
+        /// </summary>
+        /// <param name="newData"></param>
+        public void InsertInFront(int newData)
+        {
+            //Creating the instance of the new node
+            Node newNode = new Node(newData);
+            //Initialising the next new node to head position
+            newNode.next = this.head;
+            //Re-initialising the head position to new node
+            this.head = newNode;
+        }
     }
 }
