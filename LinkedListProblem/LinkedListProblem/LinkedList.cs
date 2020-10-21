@@ -113,5 +113,44 @@ namespace LinkedListProblem
                 lastNode.next = newNode;
             }
         }
+        /// <summary>
+        /// UC4- Inserting the node at a particular position in the linked list
+        /// </summary>
+        /// <param name="newData"></param>
+        public Node InsertAtParticularPosition(int position, int newData)
+        {
+            //If the position is even not of the beginging then return an exception
+            if (position < 1)
+                Console.WriteLine("The Position passed is invalid to insert...");
+            //If position is first appending at the begining of the linked list
+            else if (position == 1)
+            {
+                Node newNode = new Node(newData);
+                newNode.next = this.head;
+                head = newNode;
+            }
+            //Iterating while decremention the position to keep track of the traversal
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        //Creating an instance of the new node
+                        Node temp = new Node(newData);
+                        //Adding the node to the next position of the node
+                        temp.next = this.head.next;
+                        //Initialising the head to the temp node
+                        head.next = temp;
+                        break;
+                    }
+                    head = head.next;
+                }
+                if (position != 1)
+                    Console.WriteLine("Position Out Of Range....");
+            }
+            Console.WriteLine("Inserted Value is - "+ head.next.value);
+            return head;   
+        }
     }
 }
