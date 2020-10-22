@@ -168,5 +168,30 @@ namespace LinkedListProblem
                 return this.head;
             }
         }
+        /// <summary>
+        /// UC6- Deleting the last node of the linked list
+        /// </summary>
+        /// <returns></returns>
+        public Node DeleteLastNode()
+        {
+            //Exception cases when we have and empty linked list
+            if (head == null)
+                return null;
+            //Exception case when we have only one node in the linked list
+            if (head.next == null)
+            {
+                Console.WriteLine("Only one node in the linked list...");
+            }
+            //Creating a temporary node for traversal
+            Node tempNode = this.head;
+            //Traversing to the second last node
+            while(tempNode.next.next != null)
+            {
+                tempNode = tempNode.next;
+            }
+            //Setting the next pointer to null thereby shorting the last node
+            tempNode.next = null;
+            return head;
+        }
     }
 }

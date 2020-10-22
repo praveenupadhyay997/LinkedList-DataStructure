@@ -19,7 +19,7 @@ namespace LinkedListProblem
             newList.Append(56);
             newList.Append(70);
             newList.InsertAtParticularPosition(2,30);
-            newList.DeleteFirstNode();
+            newList.DeleteLastNode();
             Console.WriteLine("Linked List Status......");
             newList.DisplayList();
         }
