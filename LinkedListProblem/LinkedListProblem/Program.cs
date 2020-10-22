@@ -19,9 +19,9 @@ namespace LinkedListProblem
             newList.Append(56);
             newList.Append(70);
             newList.InsertAtParticularPosition(2,30);
-            newList.DeleteLastNode();
             Console.WriteLine("Linked List Status......");
             newList.DisplayList();
+            Console.WriteLine("\nPostion of the element 30 is  "+newList.SearchTheNode(30));
         }
     }
 }
