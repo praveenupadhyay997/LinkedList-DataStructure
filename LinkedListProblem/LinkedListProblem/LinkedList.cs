@@ -193,5 +193,28 @@ namespace LinkedListProblem
             tempNode.next = null;
             return head;
         }
+        /// <summary>
+        /// UC7- Getting the position of the node with the value passed by the user
+        /// </summary>
+        /// <param name="valueOfNode"></param>
+        /// <returns></returns>
+        public int SearchTheNode(int valueOfNode)
+        {
+            //Counter Variable
+            int count = 0;
+            //Iterating till the end of the linked list
+            while(this.head != null)
+            {
+                //Matching case of the data value of the node with the head value
+                //Then returning the count and exiting the loop
+                if (this.head.value == valueOfNode)
+                    return ++count;
+                //Default cases to increment the node position in the loop
+                this.head = this.head.next;
+                //Incrementing the counter variable
+                count++;
+            }
+            return count;
+        }
     }
 }
