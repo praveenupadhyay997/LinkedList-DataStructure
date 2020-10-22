@@ -152,5 +152,21 @@ namespace LinkedListProblem
             Console.WriteLine("Inserted Value is - "+ head.next.value);
             return head;   
         }
+        /// <summary>
+        /// UC5- Deleting the first node of the linked list
+        /// </summary>
+        /// <returns></returns>
+        public Node DeleteFirstNode()
+        {
+            //Exception condition if the linked list is empty
+            //else- repointing the head to second node
+            if (this.head == null)
+                return null;
+            else
+            {
+                this.head = this.head.next;
+                return this.head;
+            }
+        }
     }
 }
