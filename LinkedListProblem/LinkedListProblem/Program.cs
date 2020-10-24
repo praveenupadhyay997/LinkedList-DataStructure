@@ -22,6 +22,10 @@ namespace LinkedListProblem
             Console.WriteLine("Linked List Status......");
             newList.DisplayList();
             Console.WriteLine("\nPostion of the element 30 is  "+newList.SearchTheNode(30));
+            int position = newList.SearchTheNode(30);
+            newList.InsertAtParticularPosition(position+1, 40);
+            Console.WriteLine("Linked List Status......");
+            newList.DisplayList();
         }
     }
 }
