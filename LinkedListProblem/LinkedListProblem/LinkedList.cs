@@ -16,6 +16,8 @@ namespace LinkedListProblem
         /// Head node to mark the begining of the linked list
         /// </summary>
         public Node head;
+        private Node tempNode;
+
         /// <summary>
         /// UC-1 Adding the node to the end of the linked list
         /// </summary>
@@ -132,6 +134,8 @@ namespace LinkedListProblem
             //Iterating while decremention the position to keep track of the traversal
             else
             {
+                //Assigning a temporary node the reference of the head node
+                this.tempNode = this.head;
                 while (position-- != 0)
                 {
                     if (position == 1)
@@ -139,17 +143,18 @@ namespace LinkedListProblem
                         //Creating an instance of the new node
                         Node temp = new Node(newData);
                         //Adding the node to the next position of the node
-                        temp.next = this.head.next;
+                        temp.next = this.tempNode.next;
                         //Initialising the head to the temp node
-                        head.next = temp;
+                        tempNode.next = temp;
                         break;
                     }
-                    head = head.next;
+                    // Incrementing the position of the node to next position
+                    this.tempNode = this.tempNode.next;
                 }
                 if (position != 1)
                     Console.WriteLine("Position Out Of Range....");
             }
-            Console.WriteLine("Inserted Value is - "+ head.next.value);
+            Console.WriteLine("Inserted Value is - "+ newData);
             return head;   
         }
         /// <summary>
@@ -200,17 +205,18 @@ namespace LinkedListProblem
         /// <returns></returns>
         public int SearchTheNode(int valueOfNode)
         {
+            this.tempNode = this.head;
             //Counter Variable
             int count = 0;
             //Iterating till the end of the linked list
-            while(this.head != null)
+            while(this.tempNode != null)
             {
                 //Matching case of the data value of the node with the head value
                 //Then returning the count and exiting the loop
-                if (this.head.value == valueOfNode)
+                if (this.tempNode.value == valueOfNode)
                     return ++count;
                 //Default cases to increment the node position in the loop
-                this.head = this.head.next;
+                this.tempNode = this.head.next;
                 //Incrementing the counter variable
                 count++;
             }
