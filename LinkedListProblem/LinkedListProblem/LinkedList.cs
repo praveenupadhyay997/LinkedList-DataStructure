@@ -222,5 +222,42 @@ namespace LinkedListProblem
             }
             return count;
         }
+        /// <summary>
+        /// Getting the Count of the Elements in the linked list
+        /// </summary>
+        /// <returns></returns>
+        public int Count()
+        {
+            // Allocating a temporary node to the head of the linked list
+            this.tempNode = this.head;
+            int count = 0;
+            while(this.tempNode != null)
+            {
+                ++count;
+                this.tempNode = this.tempNode.next;
+            }
+            return count;
+        }
+        /// <summary>
+        /// UC-9 Deleting a particular node in the linked list
+        /// </summary>
+        /// <param name="data"></param>
+        public void DeleteParticularNode(int data)
+        {
+            // Allocating a temporary node to the head of the linked list
+            this.tempNode = this.head;
+            //Checking the condition till the end of the linked list
+            while(tempNode.next != null)
+            {
+                //Matching the value with the value passed as the argument
+                if (this.tempNode.next.value == data)
+                {
+                    //Shorting the current node to delete it
+                    this.tempNode.next = this.tempNode.next.next;
+                }
+                //Moving to the next node
+                this.tempNode = this.tempNode.next;
+            }
+        }
     }
 }
