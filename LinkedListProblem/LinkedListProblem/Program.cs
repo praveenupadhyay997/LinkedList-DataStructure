@@ -36,6 +36,10 @@ namespace LinkedListProblem
             newList.DisplayList();
             //Displaying the count after deletion
             Console.WriteLine("\nLinked List Element Count after the deletion of the node = " + newList.Count());
+            //Calling the sorting function
+            //Then displaying the list
+            newList.SortingTheLinkedList();
+            newList.DisplayList();
         }
     }
 }

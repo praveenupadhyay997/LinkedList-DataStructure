@@ -259,5 +259,37 @@ namespace LinkedListProblem
                 this.tempNode = this.tempNode.next;
             }
         }
+        /// <summary>
+        /// UC10- Sorting the Linked List by using the algorithm of selection sort
+        /// </summary>
+        public  void SortingTheLinkedList()
+        {
+            //Allocating a temporary node to the head position
+            this.tempNode = this.head;
+            // Traverse the List till the list is null
+            while (tempNode !=null)
+            {
+                //Allocating the minimum value to the current node
+                Node getMinimumValue = tempNode;
+                //Defining the unsorted list from the next position till the last node
+                Node unsortedList = tempNode.next;
+                // Traverse the unsorted list till the last node is reached
+                while (unsortedList != null)
+                {
+                    //Logic to chek whether the reached value is greater or small
+                    //Then restoring the position of the minimum node to the unsorted list current position
+                    if (getMinimumValue.value > unsortedList.value)
+                        getMinimumValue = unsortedList;
+                    //Moving to the next position in the unsorted linked list
+                    unsortedList = unsortedList.next;
+                }
+                // Swapping the Data by using a non generic temporary variable
+                int localTempValue = tempNode.value;
+                tempNode.value = getMinimumValue.value;
+                getMinimumValue.value = localTempValue;
+                //Moving to the next node
+                this.tempNode = this.tempNode.next;
+            }
+        }
     }
 }
